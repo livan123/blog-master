@@ -1,0 +1,385 @@
+ERROR 2017-02-08 10:18:03,424 views 6411 140350626912000 邮件发送失败: (535, b'5.7.8 authentication failed')ERROR 2017-10-07 10:11:28,866 exception 12102 140324119840512 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'blog.app_article' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/home/ming/projects/blog/app/views.py", line 29, in get_queryset
+    for article in article_list:
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __iter__
+    self._fetch_all()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ming/.env/blog/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'blog.app_article' doesn't exist")
+ERROR 2017-10-07 10:24:31,582 views 13373 140030823622400 邮件发送失败: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2017-10-07 11:02:40,385 views 26434 139984518506240 邮件发送失败: (535, b'5.7.8 authentication failed')
+ERROR 2017-10-07 11:03:13,011 views 26595 140543109977856 邮件发送失败: (535, b'5.7.12 SMTP access disabled')
+ERROR 2018-02-24 17:25:06,795 exception 3120 5224 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'livan.app_article' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "C:\python_workspace\blog-master\app\views.py", line 29, in get_queryset
+    for article in article_list:
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 272, in __iter__
+    self._fetch_all()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1064, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'livan.app_article' doesn't exist")
+ERROR 2018-02-26 13:54:58,318 exception 6124 8044 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'livan.app_tag' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = response.render()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 194, in render
+    return template.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 254, in __len__
+    self._fetch_all()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1064, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'livan.app_tag' doesn't exist")
+ERROR 2018-02-28 09:14:14,539 exception 2248 8160 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'livan.app_tag' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = response.render()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader_tags.py", line 194, in render
+    return template.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 254, in __len__
+    self._fetch_all()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1064, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 165, in execute
+    result = self._query(query)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1061, in _read_query_result
+    result.read()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\fubon\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'livan.app_tag' doesn't exist")
