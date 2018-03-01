@@ -70,6 +70,7 @@ class BlogComment(models.Model):
 
 class Tag(models.Model):
     """
+    sdfwsdefwsefwefdwesf
     tag(标签云)对应的数据库
     """
     name = models.CharField('标签名', max_length=20)
